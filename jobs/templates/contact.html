@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load static %}
+
+  <!-- Page Title Section Start -->
+  <div class="page-title-section section section-padding-top-0">
+    <div class="page-breadcrumb position-static">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'jobs:index' %}">{% trans "Home" %}</a></li>
+                <li class="current">{% trans "Contact us" %}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Page Title Section End -->
+
+<!-- Contact Information Section Start -->
+<div class="contact-information-section ">
+    <div class="container">
+        <div class="row margin-bottom-85">
+            <div class="col-12">
+                <div class="contact-title max-width-740">
+                    <h2 class="title">{% trans "For more information about us, get in touch with TabTick via contacts" %}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row row-30 row-cols-lg-3 row-cols-md-2 row-cols-1 max-mb-n30">
+            <div class="col max-mb-30">
+                <!-- Single Contact Info Start -->
+                <div class="contact-info">
+                    <div class="icon">
+                        <i class="fal fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info">
+                        <h4 class="title"> {% trans "Address" %}</h4>
+                        <span class="info-text"> {% trans "Nineveh, Mosul, Iraq" %} </span>
+                    </div>
+                </div>
+                <!-- Single Contact Info End -->
+            </div>
+            <div class="col max-mb-30">
+                <!-- Single Contact Info Start -->
+                <div class="contact-info">
+                    <div class="icon">
+                        <i class="fal fa-phone"></i>
+                    </div>
+                    <div class="info">
+                        <h4 class="title"> {% trans "Contact" %}</h4>
+                            
+                        {% trans "Mail:" %} <a href="mailto:tabtickb@gmail.com">tabtickb@gmail.com</a>
+                        </span>
+                    </div>
+                </div>
+                <!-- Single Contact Info End -->
+            </div>
+            <div class="col max-mb-30">
+                <!-- Single Contact Info Start -->
+                <div class="contact-info">
+                    <div class="icon">
+                        <i class="fal fa-clock"></i>
+                    </div>
+                    <div class="info">
+                        <h4 class="title"> {% trans "Social Link" %}</h4>
+
+                           <div class="profile-info">
+                                    <ul class="author-social-networks">
+                                        
+                                        <li class="item">
+                                            <a href="https://www.facebook.com/profile.php?id=100085573881829"" target="_blank" class="social-link"> <i class="fab fa-facebook-f social-link-icon"></i> </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="https://www.instagram.com/tabtickb/?igshid=MDE2OWE1N2Q%3D" target="_blank" class="social-link"> <i class="fab fa-instagram social-link-icon"></i> </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="https://www.linkedin.com/in/tabtick-%D8%AA%D8%A7%D8%A8-%D8%AA%D9%8A%D9%83-2b543124b?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BWbWJLDOASkCS%2B7m5S9jCnA%3D%3D" target="_blank" class="social-link"> <i class="fab fa-linkedin social-link-icon"></i> </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="https://www.youtube.com/channel/UCagDo4LYlFLWVOVD2TNX8aQ" target="_blank" class="social-link"> <i class="fab fa-youtube social-link-icon"></i> </a>
+                                        </li>
+                                    </ul>
+                              
+                        </div>
+                    </div>
+                </div>
+                <!-- Single Contact Info End -->
+            </div>
+        </div>
+    </div>
+    <!-- Contact Information Section End -->
+</div>
+    <!-- Contact Form Section Start -->
+
+    <div class="google-map-area section text-center" style="padding-top: 50px; padding-bottom: 50px; ">
+        <div class="container">
+            <div class="contact-map-area">
+                <iframe class="contact-map" src="https://www.google.com/maps/d/embed?mid=1BPHf4wRATziWnfQVicpu5uhOYBs&ehbc=2E312F" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+            </div>
+        </div>
+    </div>
+
+
+
+  
+    {% endblock body %} 

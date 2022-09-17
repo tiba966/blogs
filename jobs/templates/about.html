@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load i18n %}
+{% load static %}
+{% get_current_language as LANGUAGE_CODE %}
+
+   <div class="page-title-section section section-padding-top-0">
+    <div class="page-breadcrumb position-static">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'jobs:index' %}">{% trans "Home" %}</a></li>
+                <li class="current">{% trans "About TabTick" %}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- About Section Start -->
+<div class="about-section section section-padding-top-80 section-padding-bottom">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 order-lg-1 order-2">
+                <div class="about-content mt-sm-50 mt-xs-50">
+                    <h2 class="title">{% trans "Get to know about" %} <span>TabTick</span> </h2>
+                    {% for i in data %}
+                    <p> {% if LANGUAGE_CODE == 'en' %}{{i.text_about}}
+                      {% elif LANGUAGE_CODE == 'ar' %}{{i.text_about_ar}}{% endif %} </p>
+        
+                    {% endfor %}
+                       <!-- <a class="link link-lg" href="JavaScript:Void(0);"> Have questions?​ <mark>Get Free Form <i class="far fa-long-arrow-right"></i></mark></a> -->
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 order-lg-1 order-1">
+                <div class="about-image">
+                    <div class="about-image-one">
+ 
+                        {% for i in data %}
+                        <img src="{{i.image_middle_about}}" width="100%"  alt="" />
+                        {% endfor %}                    </div>
+                    
+
+                    <!-- Animation Shape Start -->
+                    <div class="shape shape-1 scene">
+                        <span data-depth="4">shape 1</span>
+                    </div>
+                 
+                    <div class="shape shape-4 scene">
+                        <span data-depth="4">
+                            <div class="about-image-one">
+                                <img src="{% static 'careers/images/about/tech.png' %}" alt="about01">
+                            </div>
+                           
+                    </div>
+                    <!-- Animation Shape End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

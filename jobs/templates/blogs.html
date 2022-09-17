@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+
+<!-- Page Title Section Start -->
+<div class="page-title-section section">
+  <!-- <div class="page-title">
+          <div class="container">
+              <h1 class="title">Blog Masonry</h1>
+          </div>
+      </div> -->
+  <div class="page-breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb">
+        <li><a href="{% url 'jobs:index' %}">{% trans "Home" %}</a></li>
+        <li class="current">{% trans "Blogs" %}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Page Title Section End -->
+
+<!-- Blog Section Start -->
+<div class="section section-padding-bottom">
+  <div class="container">
+    <div class="row justify-content-between align-items-center max-mb-20">
+      <div class="col-sm-auto col-12 max-mb-10">
+        <p class="result-count">{% trans "We found" %} <span>{{blogs|length}}</span> {% trans "blogs available for you" %}</p>
+      </div>
+      
+      <div class="col-sm-auto col-12 max-mb-10">
+        <div class="col-sm-auto col-12 max-mb-10">
+          <div class="col-sm-auto col-12 max-mb-10">
+              {% if LANGUAGE_CODE == 'en' %}
+          <select class="sort-by" onchange="location = this.value;">
+            {% elif LANGUAGE_CODE == 'ar' %} 
+            <select class="sort-by-arabic" onchange="location = this.value;">
+              {% endif %}  
+                       <option value="{% url 'jobs:blogs_filter' %}">{% trans "Default" %}</option>
+              <option value="{% url 'jobs:blogs_filter' %}?order=popularity">{% trans "Popularity" %}</option>
+              <option  value="{% url 'jobs:blogs_filter' %}?order=latest">{% trans "Latest" %}</option>
+              <optgroup label="__">
+                {% for category in categories  %}
+              <option value="{% url 'jobs:blogs_filter' %}?category={{category}}">
+                {% if LANGUAGE_CODE == 'en' %}
+                  {{ category.en_name }}
+                {% elif LANGUAGE_CODE == 'ar' %} 
+                  {{ category.ar_name }}
+                {% endif %}
+              </option></a>
+              {% endfor %}
+            </optgroup>
+  
+              
+            </select>
+          </div>
+         
+          
+        </div>
+
+        
+      </div>
+    </div>
+    <!-- Blog Wrapper Start -->
+    <div class="blog-section section section-padding">
+      <div class="container">
+
+     
+        <!-- Blog Wrapper Start -->
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 max-mb-n30">
+
+            {% for blog in blogs %}  
+            <!-- Blog Start -->
+            <div class="grid-item col max-mb-30" data-aos="fade-up">
+                <div class="blog-2">
+                  <div class="thumbnail">
+                    <a href="{{blog.image_one.url}}" class="image"><img src="{{blog.image_one.url}}" width="500" height="200"
+                        alt="Blog Image"></a>
+                  </div>
+                  <div class="info">
+                    <a href="" class="category">         {% if LANGUAGE_CODE == 'en' %}{{ blog.category.en_name }}
+                      {% elif LANGUAGE_CODE == 'ar' %} {{ blog.category.ar_name }}{% endif %}</a>
+                    <h3 class="title"><a href="{% url 'jobs:blog_detail' blog.id %}">{% if LANGUAGE_CODE == 'en' %}{{ blog.title }}
+                      {% elif LANGUAGE_CODE == 'ar' %} {{ blog.title_ar }}{% endif %}</a></h3>
+                    <div class="desc">
+                      <p>        {% if LANGUAGE_CODE == 'en' %}{{ blog.desc1 }}
+                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.desc1_ar }}{% endif %}</p>
+                    </div>
+                    <ul class="meta">
+                      <li><i class="far fa-calendar"></i>  {{blog.date|date:'d M o'}}  </li>
+                      <li><i class="far fa-user"></i>     {% if LANGUAGE_CODE == 'en' %}{{ blog.authors }}
+                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.authors_ar }}{% endif %}   </li>
+                    </ul>
+                    <!-- Teacher Quote Wrapper Start -->
+                    <div class="" data-aos="fade-up">
+                      <!-- Teacher Quote Start -->
+                    
+        
+                          <div class="experience" style="padding-top: 20px">
+                            <a href="{% url 'jobs:blog_detail' blog.id %}" class="link">{% trans "Read more" %} <i
+                                class="far fa-long-arrow-right"></i></a>
+                         
+                      </div>
+                      <!-- Teacher Quote End -->
+                    </div>
+                    <!-- Teacher Quote Wrapper End -->
+        
+        
+                  </div>
+                </div>
+              </div>
+            <!-- Blog End -->
+          {% endfor %}
+        </div>
+        <!-- Blog Wrapper End -->
+
+
+
+       
+    </div>
+    </div>
+    <!-- Blog End -->
+
+  </div>
+
+   
+
+</div>
+
+  {% endblock body %}
+
+  

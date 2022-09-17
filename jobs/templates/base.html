@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% trans  "TabTick blog healthy, Technology, food, Business,company, Coding, Programming " %}</title>
+        <meta name="robots" content="noindex, follow" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'careers/images/logo/logo.png' %}">
+    
+
+    
+        <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+        <link rel="stylesheet" href="{% static 'careers/css/vendor/vendor.min.css' %}">
+        <link rel="stylesheet" href="{% static 'careers/css/plugins/plugins.min.css' %}">
+        {% if LANGUAGE_CODE == 'en' %}<link rel="stylesheet" href="{% static 'careers/css/style.min.css' %}">
+        {% elif LANGUAGE_CODE == 'ar' %}<link rel="stylesheet" href="{% static 'careers/css/styles_arabic.css' %}">{% endif %}
+    
+    </head>
+    
+    <body>
+    
+        <div id="page">
+    
+            <div class="header-section sticky-header section">
+                <div class="header-inner">
+                    <div class="container position-relative">
+                        <div class="row justify-content-between align-items-center">
+    
+                            <!-- Header Logo Start -->
+                            <div class="col-xl-2 col-auto">
+                                <div class="header-logo">
+                                    <a href="{% url 'jobs:index' %}">
+                                        <img class="dark-logo" src="{% static 'careers/images/logo/logo.png' %}" alt="Logo" height="55">
+                                        <img class="light-logo" src="{% static 'careers/images/logo/logo.png' %}" alt="Logo">
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Header Logo End -->
+     <!-- Header Main Menu Start -->
+     <div class="col d-none d-xl-block position-static">
+        <nav class="site-main-menu menu-hover-1">
+            <ul>
+
+                <li class="has-children position-static">
+                    <a href="{% url 'jobs:index' %}">{% trans "Home" %}</a>
+    
+    
+                </li>
+                <li class="has-children position-static">
+                    <a href="{% url 'jobs:about' %}">{% trans "About TabTick" %}</a>
+    
+    
+                </li>
+                <li class="has-children">
+                    <a href="#"><span class="menu-text">{% trans "Category" %}</span></a>
+                    <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                    <ul class="sub-menu">
+                        {%for category in categories %}
+                        <li><a href="{% url 'jobs:blogs' %}?category={{category}}"><span class="menu-text"> 
+                            {% if LANGUAGE_CODE == 'en' %} 
+                                {{ category.en_name }}
+                            {% elif LANGUAGE_CODE == 'ar' %} 
+                                {{ category.ar_name }}
+                            {% endif %}
+                        </a></li>
+              {%endfor%}  
+
+                    </ul>
+                </li>
+                
+                
+               
+                <li class="has-children">
+                    <a href="{% url 'jobs:contact' %}">{% trans "Contact us" %}</a>
+    
+                </li>
+               
+                <li class="has-children"> <a href="#"><span class="menu-text">{% trans "language" %}</span></a>
+                    <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                    <ul class="sub-menu">
+                      <li> <a href=""><form action="{% url 'set_language' %}"   method="post" >
+                        {% csrf_token %}
+                        {% get_current_language as LANGUAGE_CODE %}                                         
+                        <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+                        {% if LANGUAGE_CODE == 'ar' %}
+                             <button type='submit' name='language' value='en' class="theme-btn btn-style-eight"  style="padding-right:20px; float: right; background-color: white;  border: none;">
+                                <span  style="padding-top:8px">English</span>
+                            </button>
+                        {% else %}
+                            <button type='submit' name='language' value='ar' class="theme-btn btn-style-eight" style="padding-left:20px; float: left;  background-color: white; border: none;">
+                                <span >العربيه</span>
+                            </button>
+                        {% endif %}
+                    </form></a></li>
+                    </ul>
+                  </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- Header Main Menu End -->
+    
+                            <!-- Header Right Start -->
+                            <div class="col-xl-3 col-auto">
+                                <div class="header-right">
+                                    <div class="inner">
+    
+                                        <!-- Header Social Start -->
+                                        <div class="header-social d-none d-sm-flex">
+                                            <a href="https://www.facebook.com/profile.php?id=100085573881829"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="https://www.instagram.com/tabtickb/?igshid=MDE2OWE1N2Q%3D"><i class="fab fa-instagram"></i></a>
+                                            <a href="https://www.linkedin.com/in/tabtick-%D8%AA%D8%A7%D8%A8-%D8%AA%D9%8A%D9%83-2b543124b?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BWbWJLDOASkCS%2B7m5S9jCnA%3D%3D"><i class="fab fa-linkedin"></i></a>
+
+                                            <a href="https://www.youtube.com/channel/UCagDo4LYlFLWVOVD2TNX8aQ"><i class="fab fa-youtube"></i></a>
+
+                                        </div>
+                                        <!-- Header Social End -->
+    
+                                      
+                                
+                                      
+                                        <!-- Header Mobile Menu Toggle Start -->
+                                        <div class="header-mobile-menu-toggle d-xl-none ml-sm-2">
+                                            <button class="toggle">
+                                                <i class="icon-top"></i>
+                                                <i class="icon-middle"></i>
+                                                <i class="icon-bottom"></i>
+                                            </button>
+                                        </div>
+                                        <!-- Header Mobile Menu Toggle End -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Header Right End -->
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Section End -->
+    
+            <!-- Full Screen Search Start -->
+            <div id="fullscreen-search" class="fullscreen-search">
+                <div class="fullscreen-search-close">
+                    <button class="toggle">
+                        <i class="icon-top"></i>
+                        <i class="icon-bottom"></i>
+                    </button>
+                </div>
+                <div class="fullscreen-search-form">
+                    <form action="#">
+                        <input type="text" placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+            <!-- Full Screen Search End -->
+    
+ {% block body%}
+  
+ {% endblock body%}
+    
+            <div class="footer-section section" data-bg-color="#171621">
+                <div class="container">
+    
+                    <!-- Footer Top Widgets Start -->
+                    <div class="row">
+                        <!-- Footer Widget Start -->
+                        <div class="col-xl-4 col-md-5 col-12 max-mb-50">
+                            <div class="footer-widget light-color">
+                                <h4 class="footer-widget-title">{% trans "Address" %}</h4>
+                                <div class="footer-widget-content">
+                                    <div class="content">
+                                        <p>{% trans "Erbil, Iraq" %}</p>
+                                        <p><a href="mailto:tabtickb@gmail.com">  tabtickb@gmail.com </a></p>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Widget Start -->
+                        <div class="col-xl-4 col-md-5 col-12 max-mb-50">
+                            <div class="footer-widget light-color">
+                                <h4 class="footer-widget-title">{% trans "Social Link" %}</h4>
+                                <div class="footer-widget-content">
+    
+                                    <div class="footer-social-inline">
+                                        <a href="https://www.facebook.com/profile.php?id=100085573881829"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="https://www.instagram.com/tabtickb/?igshid=MDE2OWE1N2Q%3D"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.linkedin.com/in/tabtick-%D8%AA%D8%A7%D8%A8-%D8%AA%D9%8A%D9%83-2b543124b?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BWbWJLDOASkCS%2B7m5S9jCnA%3D%3D"><i class="fab fa-linkedin"></i></a>
+
+                                        <a href="https://www.youtube.com/channel/UCagDo4LYlFLWVOVD2TNX8aQ"><i class="fab fa-youtube"></i></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Widget End -->
+    
+                        <!-- Footer Widget Start -->
+                        <div class="col-xl-4 col-md-4 col-sm-7 col-12 max-mb-50">
+                            <div class="footer-widget light-color">
+                                <h4 class="footer-widget-title">{% trans "Explore" %}</h4>
+                                <div class="footer-widget-content">
+                                    <ul class="column-2">
+                                        <li><a href="{% url 'jobs:index' %}">{% trans "Home" %}</a></li>
+                                        <li><a href="{% url 'jobs:about' %}">{% trans "About TabTick" %}</a></li>
+                                        <li><a href="{% url 'jobs:blogs' %}">{% trans "Blog" %}</a></li>
+                                        <li><a href="{% url 'jobs:contact' %}">{% trans "Contact us" %}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Widget End -->
+    
+                    </div>
+                    <!-- Footer Top Widgets End -->
+    
+                    <!-- Footer Copyright Start -->
+                    <div class="row max-mt-20">
+                        <div class="col">
+                            <p class="copyright">&copy; {% trans "2022 TabTick. All Rights Reserved" %}</p>
+                        </div>
+                    </div>
+                    <!-- Footer Copyright End -->
+    
+                </div>
+            </div>
+    
+    
+            <!-- Scroll Top Start -->
+            <a href="#" class="scroll-top" id="scroll-top">
+                <i class="arrow-top fal fa-long-arrow-up"></i>
+                <i class="arrow-bottom fal fa-long-arrow-up"></i>
+            </a>
+            <!-- Scroll Top End -->
+        </div>
+    
+        <div id="site-main-mobile-menu" class="site-main-mobile-menu">
+            <div class="site-main-mobile-menu-inner">
+                <div class="mobile-menu-header">
+                    <div class="mobile-menu-logo">
+                        <a href="{% url 'jobs:index' %}"><img src="{% static 'careers/images/logo/logo.png' %}" height="20px" alt=""></a>
+                    </div>
+                    <div class="mobile-menu-close">
+                        <button class="toggle">
+                            <i class="icon-top"></i>
+                            <i class="icon-bottom"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mobile-menu-content">
+                    <nav class="site-mobile-menu">
+                        <ul>
+                            <li class="has-children position-static">
+                                <a href="{% url 'jobs:index' %}">{% trans "Home" %}</a>
+                
+                
+                            </li>
+                            <li class="has-children position-static">
+                                <a href="{% url 'jobs:about' %}"><span class="menu-text">{% trans "About TabTick" %}</span></a>
+    
+    
+                            </li>
+                            <li class="has-children">
+                                <a href="#"><span class="menu-text">{% trans "Category" %}</span></a>
+                                <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                <ul class="sub-menu">
+                                    {%for category in categories %}
+                                    <li><a href="{% url 'jobs:blogs' %}?category={{category}}"><span class="menu-text"> 
+                                        {% if LANGUAGE_CODE == 'en' %} 
+                                            {{ category.en_name }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} 
+                                            {{ category.ar_name }}
+                                        {% endif %}
+                                    </a></li>
+                          {%endfor%}  
+            
+                                </ul>
+                            </li>
+    
+                           
+                          
+                      
+                            <li class="has-children">
+                                <a href="{% url 'jobs:contact' %}"><span class="menu-text">{% trans "Contact us" %}</span></a>
+    
+                            </li>
+                            <li class="has-children"> <a href="#"><span class="menu-text">{% trans "language" %}</span></a>
+                                <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                                <ul class="sub-menu">
+                                  <li> <a href=""><form action="{% url 'set_language' %}"   method="post" >
+                                    {% csrf_token %}
+                                    {% get_current_language as LANGUAGE_CODE %}                                         
+                                    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+                                    {% if LANGUAGE_CODE == 'ar' %}
+                                         <button type='submit' name='language' value='en'   style="padding-right:20px;color: black; float: right;  border: none;">
+                                            <span  style="padding-top:8px">English</span>
+                                        </button>
+                                    {% else %}
+                                        <button type='submit' name='language' value='ar'  style="padding-left:20px; float: left;color: black;  border: none;">
+                                            <span >العربيه</span>
+                                        </button>
+                                    {% endif %}
+                                </form></a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    
+        <script src="{% static 'careers/js/vendor/vendor.min.js' %}"></script>
+        <script src="{% static 'careers/js/plugins/plugins.min.js' %}"></script>
+    
+        <!-- Main Activation JS -->
+        <script src="{% static 'careers/js/main.js' %}"></script>
+        <!-- Main Activation JS -->
+    
+    
+    
+    
+    
+    </body>
+
+
+</html>

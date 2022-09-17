@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-17 14:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\blog\settings.py:135
+msgid "English"
+msgstr "English"
+
+#: .\blog\settings.py:136
+msgid "Arabic"
+msgstr "العربية"
+
+#: .\jobs\templates\about.html:11 .\jobs\templates\base.html:52
+#: .\jobs\templates\base.html:211 .\jobs\templates\blog_detail.html:13
+#: .\jobs\templates\blogs.html:19 .\jobs\templates\blogs_filter.html:19
+#: .\jobs\templates\contact.html:12
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\jobs\templates\about.html:12 .\jobs\templates\base.html:57
+#: .\jobs\templates\base.html:212 .\jobs\templates\base.html:261
+msgid "About TabTick"
+msgstr "عن TabTick"
+
+#: .\jobs\templates\about.html:24
+msgid "Get to know about"
+msgstr "تعرف على"
+
+#: .\jobs\templates\base.html:10
+msgid ""
+"TabTick blog healthy, Technology, food, Business,company, Coding, "
+"Programming "
+msgstr ""
+
+#: .\jobs\templates\base.html:62 .\jobs\templates\base.html:266
+msgid "Category"
+msgstr "التصنيفات"
+
+#: .\jobs\templates\base.html:81 .\jobs\templates\base.html:214
+#: .\jobs\templates\base.html:286 .\jobs\templates\contact.html:13
+#: .\jobs\templates\reply.html:26
+msgid "Contact us"
+msgstr "اتصل بنا"
+
+#: .\jobs\templates\base.html:85 .\jobs\templates\base.html:289
+msgid "language"
+msgstr "اللغة"
+
+#: .\jobs\templates\base.html:176 .\jobs\templates\contact.html:38
+msgid "Address"
+msgstr "العنوان"
+
+#: .\jobs\templates\base.html:179
+msgid "Erbil, Iraq"
+msgstr "الموصل , العراق"
+
+#: .\jobs\templates\base.html:189 .\jobs\templates\contact.html:66
+msgid "Social Link"
+msgstr "روابط التواصل الاجنماعي"
+
+#: .\jobs\templates\base.html:208
+msgid "Explore"
+msgstr "استكشف"
+
+#: .\jobs\templates\base.html:213
+msgid "Blog"
+msgstr "المقالة"
+
+#: .\jobs\templates\base.html:227
+msgid "2022 TabTick. All Rights Reserved"
+msgstr " كل الحقوق محفوظة لدى TabTick 2022 "
+
+#: .\jobs\templates\blog_detail.html:14 .\jobs\templates\blogs.html:20
+#: .\jobs\templates\blogs_filter.html:20
+msgid "Blogs"
+msgstr "المقالات"
+
+#: .\jobs\templates\blog_detail.html:55
+msgid "Share this blog by"
+msgstr "مشاركة هذه المقالة"
+
+#: .\jobs\templates\blogs.html:32 .\jobs\templates\blogs_filter.html:32
+msgid "We found"
+msgstr "وجدنا"
+
+#: .\jobs\templates\blogs.html:32 .\jobs\templates\blogs_filter.html:32
+msgid "blogs available for you"
+msgstr "المقالات المتاحة لك"
+
+#: .\jobs\templates\blogs.html:43 .\jobs\templates\blogs_filter.html:42
+msgid "Default"
+msgstr "إفتراضي"
+
+#: .\jobs\templates\blogs.html:44 .\jobs\templates\blogs_filter.html:43
+msgid "Popularity"
+msgstr "الاكثر شيوعا"
+
+#: .\jobs\templates\blogs.html:45 .\jobs\templates\blogs_filter.html:44
+msgid "Latest"
+msgstr "الأحدث "
+
+#: .\jobs\templates\blogs.html:104 .\jobs\templates\blogs_filter.html:96
+#: .\jobs\templates\index.html:105
+msgid "Read more"
+msgstr "قراءة المزيد"
+
+#: .\jobs\templates\contact.html:26
+msgid "For more information about us, get in touch with TabTick via contacts"
+msgstr "لمزيد من المعلومات عنا , تواصل مع تاب تيك عبر جهات الاتصال "
+
+#: .\jobs\templates\contact.html:39
+msgid "Nineveh, Mosul, Iraq"
+msgstr "نينوى, موصل ,العراق"
+
+#: .\jobs\templates\contact.html:51
+msgid "Contact"
+msgstr "اتصل بنا"
+
+#: .\jobs\templates\contact.html:53
+msgid "Mail:"
+msgstr "البريد الالكتروني"
+
+#: .\jobs\templates\index.html:17
+msgid "Expand Your Knowledge"
+msgstr "قم بتوسيع معرفتك"
+
+#: .\jobs\templates\index.html:24 .\jobs\templates\index.html:126
+msgid "View all blogs"
+msgstr "مشاهدة جميع المقالات"
+
+#: .\jobs\templates\index.html:47
+msgid "Let’s Know about TabTick"
+msgstr "دعونا نتعرف على TabTick"
+
+#: .\jobs\templates\index.html:69
+msgid "Articles & Tips"
+msgstr "مقالات ونصائح"
+
+#: .\jobs\templates\index.html:70
+msgid "Latest from"
+msgstr "الأحدث من"
+
+#: .\jobs\templates\index.html:70
+msgid "the blog"
+msgstr "المقالة"
+
+#: .\jobs\templates\index.html:126
+msgid "Wanna transform your life?"
+msgstr "هل تريد تحويل معرفتك؟"
+
+#: .\jobs\templates\reply.html:18
+msgid "Thank You!"
+msgstr "شكرا لك"
+
+#: .\jobs\templates\reply.html:24
+msgid ""
+"For choosing Ashor Iraqi Foundation For Relief And Development, We’ll get "
+"back to you about your order as soon as possible."
+msgstr "لاختيار ZAMTECH ، سنعود إليك بشأن طلبك في أقرب وقت ممكن."
+
+#: .\jobs\templates\reply.html:26
+msgid "Having trouble?"
+msgstr "؟هل لديك مشكلة"
+
+#: .\jobs\templates\reply.html:31
+msgid "back to home page"
+msgstr "العودة الى الصفحة الرئيسية"
+
+#~ msgid "Submit"
+#~ msgstr "تقديم"
+
+#~ msgid "We share with you all you need to know in the begining"
+#~ msgstr "نشارك معك كل ما تحتاج إلى معرفته في البداية"
+
+#~ msgid "views"
+#~ msgstr "المشاهدات"
+
+#~ msgid "Messages"
+#~ msgstr "الرسالة"
+
+#~ msgid "Email address"
+#~ msgstr "العنوان"
+
+#, fuzzy
+#~| msgid "(current)"
+#~ msgid "Currently"
+#~ msgstr "حاليا"
+
+#~ msgid "Know about"
+#~ msgstr "تعرف على"
+
+#~ msgid "TabTick Teams"
+#~ msgstr "فريق TabTick"
+
+#~ msgid "Latest Blogs"
+#~ msgstr "اخر المقالات"
+
+#~ msgid "view more"
+#~ msgstr "عرض الكل"
+
+#~ msgid "See All BLOGS"
+#~ msgstr "روية جميع المقالات"
+
+#~ msgid "2022 TabTick."
+#~ msgstr "2022 TabTick."
+
+#~ msgid "HOME"
+#~ msgstr "الرئيسية"
+
+#~ msgid "BLOGS"
+#~ msgstr "المقالات"
+
+#~ msgid "CONTACT US"
+#~ msgstr "اتصل بنا"
+
+#~ msgid "LANGUAGE"
+#~ msgstr "اللغة"
+
+#~ msgid "Quick links"
+#~ msgstr "روابط سريعة"
+
+#~ msgid "Copyrights"
+#~ msgstr "حقوق النشر"
+
+#~ msgid "All blogs"
+#~ msgstr "كل المقالات"
+
+#~ msgid "Phone"
+#~ msgstr "الهاتف"
+
+#~ msgid "Back to projects"
+#~ msgstr "العودة الى المشاريع"

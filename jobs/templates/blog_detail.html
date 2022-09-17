@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load i18n %}
+{% load static %}
+{% load embed_video_tags %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<!-- Page Title Section Start -->
+<div class="page-title-section section" style="padding-bottom: 20px; padding-top: 20px;">
+    <div class="page-breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'jobs:index' %}">{% trans "Home" %}</a></li>
+                <li class="current"> <a href="{% url 'jobs:blogs' %}">{% trans "Blogs" %}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Page Title Section End -->
+
+<!-- Blog Section Start -->
+<div class="section section-padding-bottom fix">
+    <div class="container">
+        <div class="row max-mb-n50">
+            <div class="col-lg-12 col-12 order-lg-2 max-mb-50">
+                <!-- Blog Wrapper Start -->
+                <div class="row row-cols-1 g-0">
+
+                    <!-- Blog Start -->
+                    <div class="blog-3 blog-details col" data-aos="fade-up">
+                        <div class="info" style="text-align: center;">
+                            <h3 class="title"> {% if LANGUAGE_CODE == 'en' %} {{ blog.title }}
+                                {% elif LANGUAGE_CODE == 'ar' %} {{ blog.title_ar }} {% endif %} </h3>
+
+                            <a href="#" class="category"> {% if LANGUAGE_CODE == 'en' %} {{ blog.category.en_name }}
+                                {% elif LANGUAGE_CODE == 'ar' %} {{ blog.category.ar_name }} {% endif %} </a>
+                            <ul class="meta" style="  justify-content: center; padding-bottom: 20px;
+                                ">
+
+                                <li><i class="far fa-calendar"></i>  Apr 06, 2020  </li>
+
+
+                                <li><i class="far fa-user"></i>   {% if LANGUAGE_CODE == 'en' %}{{ blog.authors }}
+                                    {% elif LANGUAGE_CODE == 'ar' %} {{ blog.authors_ar }}{% endif %}  </li>
+
+                                <li><i class="far fa-eye"></i>  Views {{ num_visits }}</li>                            </ul>
+                        </div>
+                        <div class="thumbnail">
+                            <img src="{{ blog.image_one.url }} " alt="Blog Image" width="100%" height="500">
+                        </div>
+                        
+                                <!-- <div class="row ">
+                                    <div class="col-xl-2 col-md-2 offset-xl">
+                                        <div class="profile-info">
+                                       <p style="padding-top: 25px;"> </p>     <span class="label">{% trans "Share this blog by" %}</span>
+                                        </div>
+                                    </div> 
+                                    <div class="col-xl-8 col-md-8 offset-xl">
+                                        <div class="profile-info">
+                                            <ul class="author-social-networks">
+                                                <li class="item">
+                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-twitter social-link-icon"></i> </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-facebook-f social-link-icon"></i> </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-instagram social-link-icon"></i> </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-pinterest social-link-icon"></i> </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="JavaScript:Void(0);" target="_blank" class="social-link"> <i class="fab fa-youtube social-link-icon"></i> </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> -->
+                           
+                        <div class="info">
+
+                            <div class="desc">
+                                <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.desc2 }}
+                                    {% elif LANGUAGE_CODE == 'ar' %} {{ blog.desc2_ar }} {% endif %} </p>
+
+                                <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.desc3 }}
+                                    {% elif LANGUAGE_CODE == 'ar' %} {{ blog.desc3_ar }} {% endif %} </p>
+
+                                <blockquote class="block-quote">
+                                    <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.blank }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.blank_ar }} {% endif %} !
+                                    </p>
+                                </blockquote>
+
+                                <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.desc4 }}
+                                    {% elif LANGUAGE_CODE == 'ar' %} {{ blog.desc4_ar }} {% endif %} </p>
+
+                                <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.desc5 }}
+                                    {% elif LANGUAGE_CODE == 'ar' %} {{ blog.desc5_ar }} {% endif %} </p>
+                                    {% video blog.tutorial_Video 'tiny' %}
+
+                                    <div class="content">
+
+                                    <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.desc6 }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.desc6_ar }} {% endif %}
+                                    </p>
+
+                                    <h3 class="title" style="padding-top: 30px; padding-bottom: 15px;"> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle_ar }} {% endif %}
+                                    </h3>
+
+                                    <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle_desc1 }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle_desc1_ar }} {% endif %}</p>
+
+                                    <ul style="list-style: none">
+                                        <li> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle_desc2 }}
+                                            {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle_desc2_ar }} {% endif %}
+                                        </li>
+                                        <li> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle_desc3 }}
+                                            {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle_desc3_ar }} {% endif %}
+                                        </li>
+
+                                        <li> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle_desc4 }}
+                                            {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle_desc4_ar }} {% endif %}
+                                        </li>
+                                    </ul>
+
+                                    <h3 class="title" style="padding-top: 30px; padding-bottom: 15px;"> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle2 }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle2_ar }} {% endif %}
+                                    </h3>
+                                    <p>{% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle2_desc1 }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle2_desc1_ar }} {% endif %}</p>
+                                  
+                                        <ul style="list-style: none">
+                                        <li> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle2_desc2 }}
+                                            {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle2_desc2_ar }} {% endif %}
+                                        </li>
+                                        <li> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle2_desc3 }}
+                                            {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle3_desc3_ar }} {% endif %}
+                                        </li>
+                                    </ul>
+
+                                    <h3 class="title" style="padding-top: 30px; padding-bottom: 15px;"> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle3 }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle3_ar }} {% endif %}
+                                    </h3>
+
+
+
+
+                                    <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle3_desc1 }}
+                                        {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle3_desc1_ar }} {% endif %}</p>
+
+                                 
+                                        <h3 class="title" style="padding-top: 30px; padding-bottom: 15px;"> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle4 }}
+                                            {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle4_ar }} {% endif %}
+                                        </h3>
+    
+    
+    
+    
+                                        <p> {% if LANGUAGE_CODE == 'en' %} {{ blog.subtitle4_desc1 }}
+                                            {% elif LANGUAGE_CODE == 'ar' %} {{ blog.subtitle4_desc1_ar }} {% endif %}</p>
+    
+                                    
+                                </div>
+                            </div>
+                       
+                            <div class="row justify-content-between align-items-center max-mt-50">
+                                <div class="col-auto">
+                                    <div class="entry-post-tags">
+                                        <div class="tag-label">
+                                            <span class="tag-icon far fa-tags"></span>
+                                        </div>
+                                        <div class="tag">
+                                            <a href="#">{% if LANGUAGE_CODE == 'en' %} {{ blog.category.en_name }}
+                                                {% elif LANGUAGE_CODE == 'ar' %} {{ blog.category.ar_name }} {% endif %}</a>
+                                            <!-- <a href="#">education</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                 
+
+                  
+                </div>
+                <!-- Blog Wrapper End -->
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->
+
+
+
+
+
+
+{% endblock body %}
